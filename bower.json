@@ -1,0 +1,21 @@
+{
+  "name": "FOZ",
+  "description": "Fluctuation of Zen",
+  "version": "0.1.0",
+  "ignore": [
+    ".bowerrc",
+    ".gitignore",
+    "README.md"
+  ],
+  "dependencies": {
+    "dojo": "~1.10.4",
+    "dijit": "~1.10.4",
+    "dojox": "~1.10.4",
+    "font-awesome": "~4.3.0",
+    "dgrid": "~0.4.0",
+    "dstore": "1.1.0"
+  },
+  "resolutions": {
+    "dstore": "1.1.0"
+  }
+}
