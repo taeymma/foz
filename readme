@@ -1,2 +1,7 @@
 Rework of the website for Fluctuation of Zen.
 http://fluctuationofzen.tumblr.com/
+
+install:
+
+bower install
+open foz-index.html in your favourite browser
