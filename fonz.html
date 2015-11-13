@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<style>
+  @font-face {
+    font-family: 'aircruiser';
+    src: url("./resources/fonts/aircruiser-webfont.ttf");
+    src: url("./resources/fonts/aircruiser-webfont.eot") format("embedded-opentype"), url("./resources/fonts/aircruiser-webfont.woff2") format("woff2"), url("./resources/fonts/aircruiser-webfont.woff") format("woff"), url("./resources/fonts/aircruiser-webfont.ttf") format("truetype"), url("./resources/fonts/aircruiser-webfont.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .pageOverlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    text-align: center;
+    background: url('./resources/img/intro_bg_cropped.jpg') no-repeat;
+    background-size: 100%;
+  }
+
+  .animationContainer {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 300px;
+    position: relative;
+    width: 450px;
+  }
+
+  .animF {
+    font-family: aircruiser;
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    -webkit-animation: moveF 1s linear 1 forwards;
+    -moz-animation: moveF 1s linear 1 forwards;
+    animation: moveF 1s linear 1 forwards;
+    animation-delay:1s;
+    animation-direction: normal;
+  }
+
+  .animLUC {
+    font-family: aircruiser;
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    top: 50px;
+    left: 22px;
+    opacity: 0;
+    -webkit-animation: fadeLUC 1s linear 1 forwards;
+    -moz-animation: fadeLUC 1s linear 1 forwards;
+    animation: fadeLUC 1s linear 1 forwards;
+    animation-delay:1s;
+    animation-direction: normal;
+  }
+
+  .animO {
+    font-family: aircruiser;
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    top: 50px;
+    left: 200px;
+    -webkit-animation: moveO 1s linear 1 forwards;
+    -moz-animation: moveO 1s linear 1 forwards;
+    animation: moveO 1s linear 1 forwards;
+    animation-delay:1s;
+    animation-direction: normal;
+  }
+
+  .animOF {
+    font-family: aircruiser;
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    top: 50px;
+    left: 275px;
+    opacity: 0;
+    -webkit-animation: fadeOF 1s linear 1 forwards;
+    -moz-animation: fadeOF 1s linear 1 forwards;
+    animation: fadeOF 1s linear 1 forwards;
+    animation-delay:1s;
+    animation-direction: normal;
+  }
+
+  .animN {
+    font-family: aircruiser;
+    color: black;
+    font-size: 30px;
+    -webkit-animation:spin 1s linear 1 forwards;
+    -moz-animation:spin 1s linear 1 forwards;
+    animation:spin 1s linear 1 forwards;
+    animation-delay:1s;
+    animation-direction: normal;
+    position: absolute;
+    top: 50px;
+    left: 250px;
+  }
+
+  .animEN {
+    font-family: aircruiser;
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    top: 50px;
+    left: 332px;
+    opacity: 0;
+    -webkit-animation: fadeEN 1s linear 1 forwards;
+    -moz-animation: fadeEN 1s linear 1 forwards;
+    animation: fadeEN 1s linear 1 forwards;
+    animation-delay:1s;
+    animation-direction: normal;
+  }
+
+  .animSlogan {
+    font-family: aircruiser;
+    color: black;
+    font-size: 16px;
+    position: absolute;
+    top: 90px;
+    left: 70px;
+    opacity: 0;
+    -webkit-animation: fadeSlogan 0.5s linear 1 forwards;
+    -moz-animation: fadeSlogan 0.5s linear 1 forwards;
+    animation: fadeSlogan 0.5s linear 1 forwards;
+    animation-delay: 2s;
+    animation-direction: normal;
+  }
+
+  @-moz-keyframes spin {
+    0% { -moz-transform: rotate(0deg); }
+    100% {
+      -moz-transform:  translate(60px) rotate(90deg);
+      color: red;
+    }
+  }
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% {
+      -webkit-transform: translate(60px) rotate(90deg);
+      color: red;
+    }
+  }
+  @keyframes spin {
+    0% {transform:rotate(0deg);}
+    100% {
+      transform: translate(60px) rotate(90deg);
+      color: red;
+    }
+  }
+
+  @-moz-keyframes fadeEN {
+    0% {
+      transform: translate(100px);
+      font-size: 15px;
+    }
+    100% {
+      transform: translate(0px);
+      opacity: 1;
+      font-size: 30px;
+    }
+  }
+  @-webkit-keyframes fadeEN {
+    0% {
+      transform: translate(100px);
+      font-size: 15px;
+    }
+    100% {
+      transform: translate(0px);
+      opacity: 1;
+      font-size: 30px;
+    }
+  }
+  @keyframes fadeEN {
+    0% {
+      transform: translate(100px);
+      font-size: 15px;
+    }
+    100% {
+      transform: translate(0px);
+      opacity: 1;
+      font-size: 30px;
+    }
+  }
+
+  @-moz-keyframes fadeOF {
+    0% {
+      transform: translate(100px);
+      font-size: 15px;
+    }
+    100% {
+      transform: translate(0px);
+      opacity: 1;
+      font-size: 30px;
+    }
+  }
+  @-webkit-keyframes fadeOF {
+    0% {
+      transform: translate(100px);
+      font-size: 15px;
+    }
+    100% {
+      transform: translate(0px);
+      opacity: 1;
+      font-size: 30px;
+    }
+  }
+  @keyframes fadeOF {
+    0% {
+      transform: translate(100px);
+      font-size: 15px;
+    }
+    100% {
+      transform: translate(0px);
+      opacity: 1;
+      font-size: 30px;
+    }
+  }
+
+  @-moz-keyframes fadeLUC {
+    0% {
+      transform: translate(100px);
+      font-size: 15px;
+    }
+    100% {
+      transform: translate(0px);
+      opacity: 1;
+      font-size: 30px;
+    }
+  }
+  @-webkit-keyframes fadeLUC {
+    0% {
+      transform: translate(100px);
+      font-size: 15px;
+    }
+    100% {
+      transform: translate(0px);
+      opacity: 1;
+      font-size: 30px;
+    }
+  }
+  @keyframes fadeLUC {
+    0% {
+      transform: translate(100px);
+      font-size: 15px;
+    }
+    100% {
+      transform: translate(0px);
+      opacity: 1;
+      font-size: 30px;
+    }
+  }
+
+  @-moz-keyframes fadeSlogan {
+    0% {
+      /*font-size: 5px;*/
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      font-size: 16px;
+    }
+  }
+  @-webkit-keyframes fadeSlogan {
+    0% {
+      /*font-size: 5px;*/
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      font-size: 16px;
+    }
+  }
+  @keyframes fadeSlogan {
+    0% {
+      /*font-size: 5px;*/
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      font-size: 16px;
+    }
+  }
+
+  @-moz-keyframes moveF {
+    0% { -moz-transform: translate(0px) }
+    100% {
+      -moz-transform:  translate(-150px);
+    }
+  }
+  @-webkit-keyframes moveF {
+    0% { -webkit-transform: translate(0px); }
+    100% {
+      -webkit-transform: translate(-150px);
+    }
+  }
+  @keyframes moveF {
+    0% {transform: translate(0px);}
+    100% {
+      transform: translate(-150px);
+    }
+  }
+
+  @-moz-keyframes moveO {
+    0% { -moz-transform: translate(0px) }
+    100% {
+      -moz-transform:  translate(50px);
+    }
+  }
+  @-webkit-keyframes moveO {
+    0% { -webkit-transform: translate(0px); }
+    100% {
+      -webkit-transform: translate(50px);
+    }
+  }
+  @keyframes moveO {
+    0% {transform: translate(0px);}
+    100% {
+      transform: translate(50px);
+    }
+  }
+
+</style>
+<div class="pageOverlay">
+  <div class="animationContainer">
+    <div class="animF">F</div><div class="animLUC">luctuation</div><div class="animO">O</div><div class="animOF">f</div><div class="animN">N</div><div class="animEN">en</div>
+    <div class="animSlogan">The world in a nutshell</div>
+  </div>
+</div>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
+</body>
+</html>
